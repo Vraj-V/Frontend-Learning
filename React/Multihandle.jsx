@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
-function MultiHandle(){
-  const [Data,setData] = useState ({
+function App(){
+  
+  const [data,setData] = useState ({
     name:"",
     email:""
   })
@@ -8,19 +9,21 @@ function MultiHandle(){
  const HandleChange=(e)=>{
    console.log(e.target.value);
    console.log(e.target.value);
-   setData=((prev)=>{
-     return (
-       ...prev,[e.target.value] : e.target.value;
-       )
-       })
+   setData((prev) => {
+  return {
+    ...prev,
+    [name]: value,
+  };
+});
+   
  }
-  const HandleSubmit=(e)=>{
+  const handleSubmit=(e)=>{
     e.preventDefault();
     console.log(data);
   }
   return (
     <div>
-  <form onsubmi={HandleSubmit}>
+  <form onSubmit={handleSubmit}>
      <label> Enter name :</label>
     <input type='text' name='name' placeholder="Enter you Name:"  onChange = { HandleChange} value = {data.name}></input>
 
@@ -32,4 +35,6 @@ function MultiHandle(){
     </div>
     )
 }
-export default MultiHandle();
+export default App;
+
+// Fiz the code.
