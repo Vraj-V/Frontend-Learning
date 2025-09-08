@@ -9,10 +9,11 @@ function App(){
  const HandleChange=(e)=>{
    console.log(e.target.value);
    console.log(e.target.value);
+   const { name, value } = e.target; 
    setData((prev) => {
   return {
     ...prev,
-    [name]: value,
+    [name]: value, 
   };
 });
    
@@ -20,6 +21,10 @@ function App(){
   const handleSubmit=(e)=>{
     e.preventDefault();
     console.log(data);
+    setData({
+      name: "",
+      email: ""
+    });
   }
   return (
     <div>
@@ -29,7 +34,8 @@ function App(){
 
          <label> Enter email:</label>
     <input type='text' name='email' placeholder="Enter you email:" onChange = { HandleChange} value = {data.email}></input>
-  
+    <button type="submit">Submit</button> {/* ✅ Added button to submit */}
+
   
   </form>
     </div>
