@@ -14,7 +14,7 @@ import UseArray from './components/UseState/UseArray.jsx';
 import FunctionState from './components/Useeffect/FunctionState.jsx';
 import CompA from './components/UseContext/CompA.jsx';
 import Multihandle from './components/FormHandling/Multihandle.jsx'
-
+import TextArea from './components/FormHandling/TextArea.jsx'
 
 export const NameContext = createContext();
 createRoot(document.getElementById('root')).render(
@@ -28,13 +28,15 @@ createRoot(document.getElementById('root')).render(
   <UseState />
   <UseArray />
     <FunctionState />
-    <ParentMethod /> */}
-  <Styling />
-  <Multihandle />
-
   <NameContext.Provider value={"Vraj"}>
     <CompA />
   </NameContext.Provider>
+  <Multihandle />
+    <ParentMethod /> */}
+  <Styling />
+
+<TextArea />
+
 
   </StrictMode>,
 )
