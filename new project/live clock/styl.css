@@ -1,0 +1,105 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #000;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.number{
+    transform: rotate(calc(30deg * var(--n )));
+    position: absolute;
+    text-align: center;
+    inset: 20px;
+  transform-origin: center;
+
+    font-size: 30px;
+}
+.number b{
+    transform: rotate(calc(-30deg * var(--n )));
+    display: inline-block;
+}
+
+.center-dot{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.hour-hand,.minute-hand,.second-hand{
+    --rotate:0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+transform: translate(-50%,-100%) rotate(calc(var(--rotate) 
+* 1deg));
+    transform-origin: bottom;
+
+}
+
+
+.hour-hand{
+    background-color: black;
+    width: 8px;
+    height: 150px;
+    z-index: 3
+}
+
+.minute-hand{
+    background-color: blue;
+    width: 6px;
+    height: 160px;
+    z-index: 2;
+}
+
+.second-hand{
+    background-color: red;
+    width: 5px;
+    height: 180px;
+    z-index: 1;
+ }
+
+ .date{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #333;
+ }
+ #day{
+    font-weight: bold;
+    color: #000;
+
+ }
+    #month{
+        font-weight: bold;
+        color: #000;
+    }
+    #year{
+        font-weight: bold;
+        color: #000;
+    }   

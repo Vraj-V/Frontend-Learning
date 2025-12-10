@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fecc89;
+
+
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+p{
+    font-size: 16px;
+    color: #333;
+}
+#note-input{
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px dotted #000;
+    resize: none;
+}
+.btn{
+    padding: 20px 110px;
+    background-color: #000;
+    color: white;
+    border-radius: 40px;
+    font-size: 20px;
+    border: none;
+    transition: all 0.5s ease-in;
+    &:hover{
+    background-color: white;
+    color:#000;
+    }
+}
+
+#saved-notes{
+    min-width: 100px;
+    min-height: 200px;
+    padding: 10px 40px ;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.note{
+    background-color: white;
+    color: black;
+    margin: 10px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px #a28967;
+    position: relative;
+    transition: all 0.5s ease-in;
+    &:Hover{
+        border: 1.7px dotted #9a9999;
+    }
+}
+
+.delete{
+    padding:7px  8px;
+    border: none;
+    color: white;
+    background-color: red;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 20px;
+    &:hover{
+        background-color: black;
+        color: red;
+        transform: scale(1.2);
+    }
+}

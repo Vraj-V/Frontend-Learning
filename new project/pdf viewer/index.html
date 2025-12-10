@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="container" >
+        <h1>PDF Viewer</h1>
+        <p>This is a simple PDF viewer using PDF.js.</p>
+        <p>Note: Ensure that the PDF file is accessible from the provided URL.</p>
+        <input type="file" id="fileInput" accept="application/pdf">
+        
+        <button id="loadPdfButton" onclick="showPDF()">Load PDF</button>
+    </div>
+    <div id="pdfViewer" style="width: 100%vw; height: 100vh;">
+    <iframe id="pdfCanvas" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

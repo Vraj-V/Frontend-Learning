@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let p = document.createElement("p")
+        document.body.appendChild(p);
+        console.log("success")
+        // console.log(date);
+        // console.log(date.getDate());
+        //check in console weather we receive number or not.
+        let br = document.createElement("br");
+        document.body.appendChild(br)
+        let h4 = document.createElement("h4")
+        document.body.appendChild(h4)
+
+        setInterval(function(){
+            let date = new Date();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+            let hour = date.getHours();
+            let k = hour >= 12 ? "PM" :" AM"
+
+            a = hour % 12;
+            //12 hour
+            p.innerHTML = ` 12 Time  is :${a} ${min} ${sec}  ${k}`
+            //24 hour
+            h4.innerHTML = ` 24 Time  is :${hour} ${min} ${sec} ${k}`
+            
+        },1000)
+    </script>
+</body>
+</html>

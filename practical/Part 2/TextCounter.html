@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text counter</title>
+    <style>
+        body{
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: black;"> You increase the count by 20 , change the span </h1>
+    <div style="margin: 50px;">
+        <input type="text" id="input" placeholder="Type something." style="padding: 10px; border-radius: 10px;">
+        <h1 id="para"> Total Character : <span>20</span> </h1>
+        </div>
+    <script>
+
+        let inp = document.querySelector("input");
+        let span = document.querySelector("span");
+
+        // console.log("connected script")
+        inp.addEventListener("input",function (param) {
+            console.log(inp.value.length)
+            let n = 20 - inp.value.length;
+
+            span.textContent = n
+            if(n<0){
+                span.style.color ='red'
+            }else{
+                span.style.color ='white'
+
+            }
+        })
+
+    </script>
+</body>
+</html>

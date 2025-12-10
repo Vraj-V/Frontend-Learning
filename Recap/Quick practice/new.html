@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Test</title>
+
+  <style>
+    #btn {
+      padding: 20px 10px;
+      border-radius: 10px;
+      margin: 20px 50px;
+      color: white;
+    }
+
+    .red{
+        background-color: red;
+    }
+    .blue {
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+    <h1>TEST FILE</h1>
+
+
+  <button id="btn" class="red">Magic</button>
+
+<script>
+  console.log("JS is working!");
+  const btn = document.querySelector("#btn");
+
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("blue");
+    console.log("Clicked")
+  });
+</script>
+
+</body>
+</html>

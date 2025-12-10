@@ -1,0 +1,28 @@
+#container {
+    width: 450px;
+    height: 300px;
+    margin: 150px auto;
+}
+#container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 5rem;
+ }
+#container p {
+    text-align: center;
+    color: #181616;
+    font-size: 24px;
+}
+button {
+    margin: 30px 40px;
+    background-color: darkviolet;
+    color: white;
+    border: none;
+    padding: 20px 30px;
+    font-size: 15px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #8a2be2; /* Lighter shade on hover */
+}

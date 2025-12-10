@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Gilroy';
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            color: white;
+        }
+        #container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: #222;
+        }
+        input{
+            display: none;
+        }
+        #btn{
+            padding: 12px 22px;
+            background-color: red;
+            border-radius: 5px;
+            font-weight: 600px;
+            transition: all 0.3s ease-in;
+            &:hover{
+                background-color: rgb(143, 11, 11);
+            }
+        } */
+        .lt{
+            text-decoration: line-through;
+            color: red;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+<!-- File use for "change file event handle listener" -->
+    <!-- <div id="container">
+        <input id="file" type="file">
+        <div id="btn">
+            Upload
+        </div>
+    </div> -->
+
+    <!-- File use for "form event handle listener" with "submit" as addEventListener. -->
+        <!-- <div>
+            <form >
+                <input type="text" placeholder="name" style="display: block;">
+                <input type="text" placeholder="age" style="display: block; margin: 10px 0px;">
+                <input type="submit">
+            </form>
+            <p></p>
+        </div> -->
+<!-- event Object -->
+    <!--
+        <div id="abcd">
+            <form >
+                <input type="text" placeholder="email" style="padding: 0px 13px; margin: 5px 5px;">
+                <input type="submit" style="padding: 3px 13px; margin: 5px 5px;">
+            </form>
+        </div>
+    -->
+
+        <!-- Event bubbling -->
+        <!--
+            <ul>
+                <li>apple</li>
+                <li>banana</li>
+                <li>mango</li>
+                <li>grape</li>
+        </ul> -->
+
+    <!-- Event Capturing -->
+
+    <div id="a" style="width: 500px; height: 500px; background-color: red;">
+        <div id="b" style="width: 400px; height: 400px; background-color: green;">
+            <div id="c" style="width: 300px; height: 300px; background-color: yellow;">
+                <button>click</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script src="Dom.js"></script> -->
+    <script src="Event.js"></script>
+
+</body>
+</html>
+
+<!-- Css 
+        h1{
+            color: #555;
+            font-size: 10rem;
+            font-weight: 300;
+            user-select: none; /*when you want select the text, and does not allow people to copy*/
+        }
+        
+        .enjoy{
+            color:red;
+            background-color: #2123;
+            font-size: 23px;
+        }
+ -->
+<!-- Check 31 line.
+when you dont want user select the words like for copying your content, then using css we can do that. apply 'user-select: none' on css of the content, this which disable user to select anything. -->
