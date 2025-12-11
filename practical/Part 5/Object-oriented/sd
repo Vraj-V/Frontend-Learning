@@ -105,7 +105,7 @@ Whenever a child class has a constructor, you must call super() before using thi
 Q. What is Inheritance? (SUPER SIMPLE)
 
 Inheritance means:
- One class (child) can use properties & methods of another class (parent) without rewriting them.
+    One class (child) can use properties & methods of another class (parent) without rewriting them.
 It allows code reusability and creates a relationship:
 
 Child class IS-A Parent class
