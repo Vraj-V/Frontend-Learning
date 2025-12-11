@@ -1,0 +1,196 @@
+Notes
+OOP is a programming style where you create objects that contain:
+
+    Properties (data)
+    Methods (functions)
+
+JavaScript supports OOP in two main ways:
+    1.Function Constructor (Old way – before ES6)
+    2.Class Constructor (Modern way – ES6)
+
+    // Prototype :Instead of writing the function inside constructor every time.Now all objects share the same method → more memory efficient.
+    
+    What is constructor?
+    Ans:
+        A constructor is a special function used to create objects and set their initial values.
+        When you create an object using new, the constructor runs automatically.
+        Think of it like a blueprint's setup function — it builds the object and fills in its data.
+
+Q. Write a function constructor for a Employee object containing the following properties: name, age, gender, phone, position, salary. inheritance the color property using prototype.
+
+// Function prototype for connect
+    function CreateEmployee(name,age,gender,phone,position,salary,color){
+        this.Name = name;
+        this.age = age;
+        this.phone = phone;
+        this.position = position;
+        this.salary = salary;
+        this.color = color
+    }
+    CreateEmployee.prototype.connect = function (text,color) {
+            let h1 = document.createElement("h1");
+            h1.textContent = `Loggin ${text}`;
+            h1.style.color = this.color;  //we use `this` here because we are taking parameter from object "CreateEmployee".
+            document.body.appendChild(h1);
+        }
+
+Q. why use arrow function instead of normal function?
+Ans:
+    1. Array functions are concise and easy to read.
+    2. They automatically bind this to the surrounding context, avoiding common pitfalls with regular functions.
+    3. They are often more performant due to optimizations in JavaScript engines.
+    4. They are commonly used in modern JavaScript frameworks and libraries.
+
+Q. why use arrow function in class constructor inside a function.
+    Arrow functions do NOT create their own this
+    They inherit this from the surrounding scope, which is your object.
+
+ ❌  Why the second one fails (normal function)
+ ❌  Normal functions create their own this
+        So inside this callback function this is NOT your object.
+
+                Instead:
+                In strict mode → this is undefined
+                In non-strict mode → this is window object
+                
+
+    select(){
+        document.body.querySelectorAll("h1").forEach( (param)=> {
+            if(param.style.color == this.color){
+                param.remove();
+            }
+          })
+    }
+
+
+
+🚀 1. What is extends?
+
+extends is used in JavaScript to create a child class from a parent class.
+It means:
+        Child class inherits properties and methods from parent class
+Example:
+class Animal {
+  speak() {
+    console.log("Animal speaking...");
+  }
+}
+
+class Dog extends Animal {
+}
+
+
+Now:
+
+const d = new Dog();
+d.speak();   // Works because Dog extends Animal
+
+🔥 Why extends is used?
+
+    To reuse code
+    To avoid writing the same methods again
+    For inheritance (OOP concept)
+
+1. What is super?
+
+super = special keyword used to:
+
+        ✔ Call the parent class constructor
+        ✔ Call the parent class’s methods
+    🟢 super() → calling parent constructor
+
+Whenever a child class has a constructor, you must call super() before using this.
+
+
+Q. What is Inheritance? (SUPER SIMPLE)
+
+Inheritance means:
+ One class (child) can use properties & methods of another class (parent) without rewriting them.
+It allows code reusability and creates a relationship:
+
+Child class IS-A Parent class
+
+Example:
+Dog is an Animal
+Car is a Vehicle
+Student is a Person
+
+🟢 Why do we use Inheritance?
+
+Avoid repeating the same code
+Create logical class structures
+Make code cleaner and more organized.
+Add extra features to child without touching parent
+
+🔥 Basic Example (Easy)
+Parent Class
+class Animal {
+  eat() {
+    console.log("Animal is eating");
+  }
+}
+
+Child Class
+class Dog extends Animal {
+  bark() {
+    console.log("Dog is barking");
+  }
+}
+
+Use:
+const d = new Dog();
+d.eat();   // inherited from Animal
+d.bark();  // child method
+
+Why does this work?
+Because Dog extends Animal → Dog automatically gets all Animal methods.
+
+Types of inheritance in JS:
+
+Single inheritance (1 child → 1 parent)
+Multi-level inheritance (child → parent → grandparent)
+Hierarchical inheritance (multiple children → 1 parent)
+Multiple inheritance (child → multiple parents) (Not directly supported in JS)
+
+in Js:
+1.assical inheritance (extends)
+
+🔥 Example with super()
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call parent constructor
+    this.breed = breed;
+  }
+}
+
+const d = new Dog("Buddy", "Golden Retriever");
+console.log(d.name);  // "Buddy" (from parent)
+console.log(d.breed); // "Golden Retriever" (child property)
+
+2. Prototypal inheritance (Object.create())
+Prototypal Inheritance means objects in JavaScript can inherit properties and methods from another object using a prototype.
+Every JavaScript object has a hidden property called:
+[[Prototype]] (or __proto__)
+This prototype is a link to another object → and JavaScript uses this link to find missing properties/methods.
+
+Example:
+
+let coffee ={
+    color: "dark",
+    drink: function () {
+        console.log("see see");
+        
+        }
+}
+
+let coldCoffee = Object.create(coffee);
+coldCoffee.color = "cold";
+console.log(coldCoffee.color);
+console.log(coldCoffee.drink());
