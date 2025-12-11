@@ -16,13 +16,13 @@ let result = document.querySelector("#result");
 hire.addEventListener("click", function (param) {
     console.log("click",param);
     Display();
-    result.textContent = "Thank you are contacting me kindly check your email.";
+    result.textContent = "Thank you are contacting me kindly check your email.🚩";
     });
 
 message.addEventListener("click", function (param) {
     console.log("click",param);
     Display();
-    result.textContent = " You are following @kendiyall212. Follow Me on Instagram for more detail.";
+    result.textContent = " You are following @kendiyall212. Follow Me on Instagram for more detail.✨";
     });
 
 
@@ -30,13 +30,13 @@ message.addEventListener("click", function (param) {
     hire_nas.addEventListener("click", function (param) {
     console.log("click",param);
     Display();
-    result.textContent = "Thank you are contacting kindly check your email.";
+    result.textContent = "Thank you are contacting kindly check your email🎉.";
     });
 
     message_nas.addEventListener("click", function (param) {
     console.log("click",param);
     Display();
-    result.textContent = " You are following @Natashrmdoff312. Follow Me on Instagram for more detail.";
+    result.textContent = " You are following @Natashrmdoff312. Follow Me on Instagram for more detail🎊.";
     });
 
 
