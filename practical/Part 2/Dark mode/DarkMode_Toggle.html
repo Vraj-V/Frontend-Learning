@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            width: 100vw;
+            height: 90vh;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
     .abcd{
         position: absolute;
             width: 120px;
@@ -12,6 +21,13 @@
             background-color: #333;
             color: white;
             border: 1px solid white;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
             
         }
         .new{
@@ -40,17 +56,26 @@
 // toggle is used to switch between two class for dark mode and white mode, by using toggle we can add and remove classList.
 // To manage text inside. we use classList.contains() method. which check wheather there is classList ("new")or not.
                 let abcd = document.querySelector("#abcd");
+                document.addEventListener("selectstart", (e) => e.preventDefault());
+
                 abcd.addEventListener("click",function (param) {
                 // abcd.style.backgroundColor = 'green';
                         abcd.classList.toggle("new")
                     console.log(param.target.innerText)
+                    abcd.style.cursor = "pointer";
 
+                    
                     if (abcd.classList.contains("new")){
-                    param.target.innerText="White mode"
+                    param.target.innerText="White mode";
+                    document.body.style.backgroundColor = "#ffff";
                     }else{
-                    param.target.innerText="Dark mode"
+                    param.target.innerText="Dark mode";
+                    document.body.style.backgroundColor ="#111";
                     }
                 })
+
+
+                
         </script>
 </body>
 </html>
