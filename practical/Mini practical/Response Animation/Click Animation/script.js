@@ -22,7 +22,6 @@ animation_1.addEventListener("click",function(e){
 */
 
 // My code full button:
-
 const buttons = document.querySelectorAll(".animate-btn");
 buttons.forEach((btn)=>{
 
@@ -42,10 +41,17 @@ buttons.forEach((btn)=>{
             
             btn.textContent ="Run Again";
         }
+    
     })
-
 })
 
+let allbtn = document.querySelector(".animate-all")
+.addEventListener("click",function (param) {
+    document.querySelectorAll("#circle,#square,#react").forEach((e)=>{
+        console.log(e);
+        const isRunningAll = e.classList.toggle("animate");
+       })
+    })
 
 
 
