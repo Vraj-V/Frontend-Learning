@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btn">Click to Load</button>
+    <script type="module" src="script.js"></script>
+</body>
+</html>export function run(param) { 
+    console.log("running heaving load");
+
+    let h1 = document.createElement("h1");
+    h1.textContent = `Running Heavy load ${param}`;
+
+    const obj ={
+        age: 21,
+        phone: 21213132313
+    }
+    function show(){
+        obj.age;
+        
+    }
+    document.body.appendChild(h1);
+}
