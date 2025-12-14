@@ -11,5 +11,8 @@
   "devDependencies": {
     "tailwindcss": "^4.1.17"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "animejs": "^4.2.2"
+  }
 }
