@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            background-color: #555;
+            color: white;
+            font-size: 14px;
+        }
+        small {
+        display: none;
+        font-size: 12px;
+        color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form autocomplete="off">
+
+        <label for="">Name:</label>
+        <input id="name" type="text" placeholder="name" >
+        <br>
+            <div class="hide">
+                <small id="UsernameError">You name must be correct.</small>
+            </div>
+
+        <br>
+        <label for="">Email:</label>
+        <input  id="email" type="email" placeholder="email">
+        <br>
+            <div class="hide">
+                <small id="emailError">You name must be correct.</small>
+            </div>
+        <br>
+        
+        <label for="">password:</label>
+        <input id="password" type="password" placeholder="password" >
+        <br>
+            <div class="hide">
+                <small id="passwordError">password is wrong</small>
+            </div>
+        <br>
+
+        <label for="">Age:</label>
+    
+        <input id="age" type="number" placeholder="enter you age">
+        <br>
+            <div class="hide">
+                <small id="ageError">new</small>
+            </div>
+        <br>
+
+        <label for="">About you:</label>
+        <textarea name="" id="info" placeholder="tell me about you. " rows="2"></textarea>
+        <br><br>
+
+        <input type="submit" name="" id="">
+
+        <script src="script.js"></script>
+    </form>
+
+    <div id="result"></div>
+</body>
+</html>

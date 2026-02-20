@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Aesthetic background video -->
+    <video autoplay muted loop id="bg-video">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-colorful-ink-cloud-on-water-1365-large.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Video overlay for better text readability -->
+    <div class="video-overlay"></div>
+
+    <div class="container">
+        <div class="search-panel">
+            <div class="search-container">
+                <input type="text" class="search-input" id="input" placeholder="Enter city name...">
+                <button id='search' onclick="weatherShow()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <!-- Recent searches section -->
+            <div class="recent-searches" id="recent-searches">
+                <h3><i class="fas fa-history"></i> Recent Searches</h3>
+                <div class="recent-list" id="recent-list">
+                    <!-- Recent searches will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="output" id="output">
+        <div class="content">
+            <div class="city-name" id="name"><h1>Weather App</h1></div>
+            <div id="date">Click search to get started</div>
+        </div>
+
+        <div class="weather">
+            <div id="condition">Enter a city to see weather <img id="icon" /> </div>
+            <h3>Humidity: <span id="humidity">--</span></h3>
+            <h3>Country: <span id="country">--</span></h3>
+            <h3>Region: <span id="region">--</span></h3>
+            <h3>Location: Lat <span id="lat">--</span> Lon <span id="lon">--</span></h3>
+            <h3>Wind Speed: <span id="wind_mph">--</span> mph</h3>
+            <h3>Temperature: <span id="temp">--</span>°C</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

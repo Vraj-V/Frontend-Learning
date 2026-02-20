@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<body>
+
+    <h1>Timer counter enter you number</h1>
+<form action="">
+    <input type="number" name="" id="">
+    <input type="submit">
+</form>
+
+
+<script>
+
+    let form = document.querySelector("form");
+    let input = document.querySelector("input");
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        console.log(input.value)
+
+        let  h4 = document.createElement("h4");
+        document.body.appendChild(h4);
+
+        let  h5 = document.createElement("h5");
+        document.body.appendChild(h5);
+
+        let count = input.value;
+
+        setInterval(function(){
+            //check wheather input is zero or not.
+            if(input.value === 0) h5.textContent ="reset timer"
+            
+            // counter code it was " - " used for subtracting the number from the given count. count store the user input value.
+            if (count >= 0){
+            h4.textContent = count;
+            count--;
+            }else{
+                h5.textContent ="reset timer"
+            }
+        },1000)
+
+        input.value= '';
+    })
+
+</script>
+</body>
+</html>

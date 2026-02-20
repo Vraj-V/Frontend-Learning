@@ -1,0 +1,26 @@
+.li{
+    line-height: 20px;
+    color: black;
+    list-style: number;
+}
+.btn{
+    color: rgb(248, 248, 253);
+    background-color: rgb(180, 180, 180);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.remove{
+    color: red;
+    line-height: 10px;
+    text-decoration: line-through;
+}
+
+.clear{
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+}

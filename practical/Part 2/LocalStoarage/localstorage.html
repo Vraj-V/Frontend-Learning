@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+<body>
+    
+    <script>
+        console.log("connected.");
+
+        //LocalStorage is used to store the data upto the 5MB on web browser, it can save the data even if browser tab, close or refresh.
+        /*
+            1. localStorage.setItem("key","value") = used to storage variable. and used to assign item or anything to store.
+            2. localStorage.getItem("key") = used to fetch the value;
+            3. localStorage.removeItem("key") = used to remove item or element from the localStorage., but you have store localStorage inside a value.
+            4. localStorage.clear() = used to clear localStorage  from the localStorage, but you have store localStorage inside a value.
+
+            */
+        // let n = localStorage.setItem("Name"," Vraj") ;
+        // console.log(localStorage);
+        // console.log(localStorage.getItem("Name"));
+        // // console.log(localStorage.getItem("recentSearches"));
+        // console.log(localStorage.getItem("Name"));
+        // console.log(localStorage.removeItem("Name"));  //remove the localStorage 
+        // console.log(localStorage.removeItem());  //remove the localStorage 
+        
+
+        //Session storage = this is you to store the small data to the web browser upto 5MB. and once the page is close or refresh it remove the data , and make session for eah new request.
+        /*
+        
+            1. sessionStorage.setItem("key","value") = used to storage variable. and used to assign item or anything to store.
+            2. sessionStorage.getItem("key") = used to fetch the value;
+            3. sessionStorage.removeItem("key") = used to remove item or element from the sessionStorage., but you have store sessionStorage inside a value.
+            4. sessionStorage.clear() = used to clear session  from the sessionStorage, but you have store sessionStorage inside a value.
+            
+        //Code: 
+            sessionStorage.setItem("name","vraj");
+            console.log("From session storage: ",sessionStorage)
+            console.log("From session storage: ",sessionStorage.getItem("name"))
+            console.log("removing session storage: ",sessionStorage.removeItem("name"))
+        */
+
+        //Cookie = it used to store very small amount of data on web browser.store upto 5kb
+        //when we reload the page, the data of cookie will send to server automatically every time we reload. '! IMPORTANT NOTE !'
+
+        //SET cookie
+            document.cookie = 'email = vval@aosc.co'
+
+        //to read cookie 
+        /*
+        1. search edit this cookie,
+        2. download the edit this cookie extenstion.
+        3. open that ext and it will show your cookie.
+        */
+
+
+
+        //Problem
+
+        //1 in localStorage it only accept the string value, it does not accept in other data type.
+        //Ans;
+            localStorage.setItem("number", JSON.stringify([21,22,23,24,25]))
+            localStorage.setItem("name", JSON.stringify(["vraj","valand","kamlesh"]))
+        
+            console.log("Localstorage data : " ,localStorage.getItem("number"))
+            console.log("Localstorage data : " ,localStorage.getItem("name")) //Output of both is string.
+            
+            //JSON.Parse = used to convert the string value into to object or array data type.
+            console.log("Localstorage data : " ,JSON.parse(localStorage.getItem("name"))) 
+            console.log("Localstorage data : " ,JSON.parse(localStorage.getItem("number")))
+
+
+
+    </script>
+</body>
+</html>

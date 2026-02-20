@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #111;
+            color: white;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+        }
+        .box{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+        img{
+            width: 500px;
+            height: 500px;
+            margin:50px 50px;
+            opacity: 0;
+
+
+    filter: blur(20px);
+    opacity: 0.3;
+    transform: scale(1.05);
+    transition: 
+    filter 0.6s ease,
+    opacity 0.6s ease,
+    transform 0.6s ease;
+        }
+        .loading{
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+}
+    h1{
+        position: absolute;
+            top: 20px;
+    }
+
+</style>
+</head>
+<body>
+    
+<div class="container">
+    <div class="box">
+            <h1>Lazing loading example</h1>
+            <br>
+            <h1>Press CTRL + SHIFT + R = Hard Reload To see Effect of Lazing Loading</h1>
+            <img  data-src="https://th.bing.com/th/id/OIP.nlbkzQcZPyaoSLpQ9Vg7FAHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Image 1">
+        </div>
+    <div class=" box"></div>
+    
+    <div class="box">
+        <img  data-src="https://i.pinimg.com/736x/a4/8e/7a/a48e7a0ceb4ff9088341077d4f56c426.jpg" alt="Image 2">
+    </div>
+    
+    <div class=" box"></div>
+    
+    <div class="box">
+        <img  data-src="https://i.pinimg.com/736x/0f/aa/f9/0faaf956d90d4521c19bfd572428a0f4.jpg" alt="Image 3">
+    </div>
+
+    <div class="box">
+        <img  data-src="https://i.pinimg.com/736x/27/0c/d6/270cd61efca49911f2637931b16ba316.jpg" alt="Image 4">
+    </div>
+    <div class=" box"></div>
+
+    <div class="box">
+        <img  data-src="https://i.pinimg.com/736x/ca/e3/04/cae304672555217d1b2816caea2f002d.jpg" alt="Image 5">
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

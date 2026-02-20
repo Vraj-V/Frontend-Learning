@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Chewy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Background video styling */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -2;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.4) 100%);
+    z-index: -1;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.search-panel {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-radius: 50px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-input {
+    flex: 1;
+    padding: 20px 25px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#search {
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Recent searches styling */
+.recent-searches {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.recent-searches h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recent-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.recent-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.recent-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Output styling */
+.output {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+    animation: fadeInUp 0.6s ease-out;
+}
+.output.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.city-name h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+#date {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#date:hover {
+    color: #fff;
+}
+
+.weather {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#condition {
+    grid-column: 1 / -1;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.weather h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.weather h3:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.weather span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#icon {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        border-radius: 25px;
+    }
+
+    .search-input {
+        border-radius: 25px 25px 0 0;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    #search {
+        border-radius: 0 0 25px 25px;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    .output {
+        padding: 25px 20px;
+        margin: 20px auto;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .city-name h1 {
+        font-size: 2rem;
+    }
+
+    .weather {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #condition {
+        font-size: 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .weather h3 {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .weather span {
+        font-size: 16px;
+    }
+
+    .recent-searches {
+        padding: 15px;
+    }
+
+    .recent-list {
+        justify-content: center;
+    }
+
+    .recent-item {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

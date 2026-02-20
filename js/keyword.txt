@@ -1,0 +1,14 @@
+Video #13
+keywords use in strings
+1. name.length
+2. name[1]: prinnt index of string value to 1.
+3. `` {backtic = template literal} : this is use of string interpolation,(means when we can insert variable directly in template literal) this is called string interpolation
+4. \ (escape character) : this is use of adding escape '" when you want add this in same string but due to complie sometime it
+5. .toUpperCase() : { () need to use is to show it is function} : use to convert the lowercase string to uppercase
+6. .slice(index-strt , index-end) : divide or slice the string value.
+7. .replace('name of value','replace name'): it is used to replace the string value
+8. .concat(string name // variable in which the string is store) : this is to connected or join two string into one. 
+9. .trim() : { () need to use is to show it is function} remove the unwanted spacing fromt the string
+
+
+alt+shift+bottom : use of copy the same above line of code

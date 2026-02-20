@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .progress-container{
+            width: 100px;
+            height: 30px;
+            background-color: aqua;
+        }
+        .progress-bar{
+            height: 100%;
+            width: 0%;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .percent{
+            font-size: 16px;
+            font-weight: 500;
+            color: #d1d1d1;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-card">
+        <h2>Downloading ...</h2>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+    <div class="percentage" id="percentage">0%</div>
+
+
+    <script>
+        let count=0;
+        let n = document.querySelector("#percentage")
+
+        let invt = setInterval(function (param) {
+            if( count <=100){
+                n.textContent = `${count}%`;
+                count++; //increase the counter every sec, with of interval it run continues, mean every time this get execute.
+
+
+                
+            }else{
+                clearInterval(invt)
+                document.querySelector("h2").textContent = "Download completed! ✨"
+                n.style.display= 'none';
+            }
+            
+          },100) //100 ms = 10s seconds to download.
+    </script>
+</body>
+</html>

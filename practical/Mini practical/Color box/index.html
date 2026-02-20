@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Practical</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+#input {
+    margin-bottom: 20px;
+}
+
+#colorInput {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#box {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    transition: background 0.5s ease;
+}
+#colorName{
+    font-size: 54px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    #box {
+        height: 150px;
+    }
+    body{
+        background-color: blueviolet !important;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #box {
+        height: 150px;
+    }
+    body{
+        background-color: rgb(95, 226, 43) !important;
+        font-size: 20px;
+    }
+}
+@media (max-width: 900px) {
+    #box {
+        height: 150px;
+    }
+    body{
+        color: rgb(226, 198, 43);
+        font-size: 20px;
+    }
+}
+</style>
+
+</head>
+<body>
+    <div class="container" id="container">
+
+        <div id="input">
+            <input id="colorInput" type="text" placeholder="Enter the color (e.g. red, #3498db)">
+            <button id="btn" type="submit">Submit</button>
+        </div>
+
+        <div id="box">
+
+            <h1 id="colorName"><span ></span></h1>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

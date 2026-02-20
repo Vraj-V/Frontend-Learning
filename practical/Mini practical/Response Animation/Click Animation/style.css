@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #121212;
+    color: #fff;
+
+    overflow: hidden;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.box{
+    width: 200px;
+    height: 300px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column  ;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.box:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}#react {
+  margin: 15% auto;
+  width: 150px;
+  height: 150px;
+
+  /* REQUIRED FOR SVG */
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#react.animate {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* circle */
+
+#circle {
+  width: 150px;
+  height: 150px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  margin: 30% auto;
+
+  /* IMPORTANT */
+  border: 2px solid transparent;
+  transform-origin: center;
+  will-change: transform;
+
+  transition: box-shadow 0.3s ease;
+}
+
+#circle:hover {
+  box-shadow: 0px 12px 20px rgba(255, 0, 0, 0.76);
+  border-color: white;
+}
+
+#circle.animate {
+  animation: spin 0.2s linear infinite;
+}
+
+.run {
+  animation-play-state:running;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Square */
+
+#square{
+    width: 150px;
+    height: 150px;
+    background-color: #ffee00e3;
+    border-radius: 20%;
+    margin: 30% auto;
+    border: 2px solid transparent;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    }
+    
+#square:hover{
+    box-shadow: 0px 10px 10px  rgba(251, 255, 0, 0.76);
+    transform: translateY(-10px);
+    border: 2px solid white;
+    animation:  square .8s linear infinite;;
+
+}
+#square.animate {
+  animation: square 0.8s linear infinite;
+}
+
+
+@keyframes square {
+  from {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  to {
+    transform: translateY(-10px) rotate(360deg);
+  }
+}
+
+
+button{
+    padding: 10px 40px;
+    background-color: #1e1e1e;
+    color: white;
+    border-color: white;
+    transition: all 1s ease;
+    
+}
+.stop{
+    background-color: red;
+    color:  white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+.animate-all{
+    padding: 10px 40px;
+    background-color: #1e1e1e;
+    color: white;
+    border: 2px solid white;
+    font-weight: 600;
+    transition: all 1s ease;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.animate-all:hover{
+    transform: translate(-50%,-50%) scale(1.2);
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}

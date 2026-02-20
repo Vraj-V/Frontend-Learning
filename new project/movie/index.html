@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App (WeatherAPI)</title>
+</head>
+<body>
+  <h2>Weather Search</h2>
+  <input type="text" id="city" placeholder="Enter city name (e.g. London)" />
+  <button onclick="getWeather()">Get Weather</button>
+  
+  <div id="output" style="margin-top: 20px; font-size: 18px;"></div>
+
+  <script>
+    function getWeather() {
+      const city = document.getElementById('city').value;
+      const apiKey = '8e5445931a464c1f8e7111542252806';
+      const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const temp = data.current.temp_c;
+          const condition = data.current.condition.text;
+          const icon = data.current.condition.icon;
+          const humidity = data.current.humidity;
+          const wind = data.current.wind_kph;
+          const location = data.location.name + ", " + data.location.country;
+
+          document.getElementById('output').innerHTML = `
+            <strong>${location}</strong><br>
+            Temperature: ${temp}°C<br>
+            Condition: ${condition}<br>
+            Humidity: ${humidity}%<br>
+            Wind: ${wind} kph<br>
+            <img src="https:${icon}" alt="${condition}" />
+          `;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById('output').innerText = "Error: Unable to fetch weather.";
+        });
+    }
+  </script>
+</body>
+</html>
