@@ -11,8 +11,16 @@
   "devDependencies": {
     "tailwindcss": "^4.1.17"
   },
-  "description": "",
+  "description": "A personal learning repository for practicing modern frontend development with React and related UI concepts.",
   "dependencies": {
     "animejs": "^4.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vraj-V/Frontend-Learning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vraj-V/Frontend-Learning/issues"
+  },
+  "homepage": "https://github.com/Vraj-V/Frontend-Learning#readme"
 }
