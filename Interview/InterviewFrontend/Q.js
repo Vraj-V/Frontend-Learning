@@ -70,7 +70,8 @@
 // function removeDup(arr){
 //     return [...new Set(arr)];
 // }
-// console.log(removeDup(arra))
+// console.log(removeDup(arra));
+
 
 
 // let arr =[1,2,3,4,5,2,2,3,3,2,3,9,23,33,4,5,5,6,7,7];
