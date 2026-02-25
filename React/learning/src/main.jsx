@@ -33,10 +33,10 @@ createRoot(document.getElementById('root')).render(
   </NameContext.Provider>
   <Multihandle />
     <ParentMethod /> */}
-  <Styling />
+  {/* <Styling />
 
-<TextArea />
-
+<TextArea /> */}
+<App />
 
   </StrictMode>,
 )
