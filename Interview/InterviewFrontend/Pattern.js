@@ -1,95 +1,108 @@
-// // // Square pattern
-// // // logic : in order to create a square we need row and column, which give height and length to the square, and we need outer loop and inner loop
-// // // (i,j) and based on that we create a square pattern
+// // // // Square pattern
+// // // // logic : in order to create a square we need row and column, which give height and length to the square, and we need outer loop and inner loop
+// // // // (i,j) and based on that we create a square pattern
 
 
-// // // function squarePattern(n,m){
-// // //     let rows =n;
-// // //     let columns = m;
+// // // // function squarePattern(n,m){
+// // // //     let rows =n;
+// // // //     let columns = m;
 
-// // //     for(let i =0; i < rows;i++){
-// // //         let line =''
-// // //         for(let j =0; j < columns; j++){
-// // //             line += "* "
-// // //         }
-// // //         console.log(line);
-// // //     }
+// // // //     for(let i =0; i < rows;i++){
+// // // //         let line =''
+// // // //         for(let j =0; j < columns; j++){
+// // // //             line += "* "
+// // // //         }
+// // // //         console.log(line);
+// // // //     }
     
+// // // // }
+// // // // console.log(squarePattern(4,3));
+
+// // // // Number pattern
+
+// // // function patternNum(n){
+
+// // //     for(let i =1; i < n; i++){
+// // //         let line =''
+// // //         for(let j =0;j<n;j++){
+// // //             line += `${i}`
+// // //         }
+
+// // //         console.log(line)
+// // //     }
 // // // }
-// // // console.log(squarePattern(4,3));
 
-// // // Number pattern
+// // // console.log(patternNum(3));
 
-// // function patternNum(n){
+// // // // Warm Up;
 
-// //     for(let i =1; i < n; i++){
-// //         let line =''
-// //         for(let j =0;j<n;j++){
-// //             line += `${i}`
-// //         }
+// // // // Reverse output;
 
-// //         console.log(line)
-// //     }
+// // function reverse(n){
+// //     let value = n.toString();
+
+// //     let reverse = value.split("").reverse().join("");
+// //     let num = Number(reverse)
+// //     return num;
 // // }
 
-// // console.log(patternNum(3));
 
-// // // Warm Up;
+// // console.log(reverse(12345));
+// // // digit count;
 
-// // // Reverse output;
+// // function digitCOunt(n){
+// //     let count =0;
+// //     while(n >0){
+// //         n= Math.floor(n/10);
+// //         count++
+// //     }
+// //     return count
+// // }
+// // console.log(digitCOunt(12345))
 
-// function reverse(n){
-//     let value = n.toString();
+// // Palindrome string
 
-//     let reverse = value.split("").reverse().join("");
-//     let num = Number(reverse)
-//     return num;
-// }
+// // function palindromeStr(n){
+// //     let str = n;
 
+// //     let reverse = n.split("").reverse().join("");
 
-// console.log(reverse(12345));
-// // digit count;
-
-// function digitCOunt(n){
-//     let count =0;
-//     while(n >0){
-//         n= Math.floor(n/10);
-//         count++
-//     }
-//     return count
-// }
-// console.log(digitCOunt(12345))
-
-// Palindrome string
-
-// function palindromeStr(n){
-//     let str = n;
-
-//     let reverse = n.split("").reverse().join("");
-
-//     if(str === reverse){
-//         return true;
+// //     if(str === reverse){
+// //         return true;
         
+// //     }
+// //     return false;
+// // }
+// // let sts ='vraj'
+// // let st ='vjv'
+// // console.log(palindromeStr(sts))
+// // console.log(palindromeStr(st))
+
+// // Palindrome number
+
+// function palindromenum(n) {
+//     let str = n.toString();
+
+//     let reverse = str.split("").reverse("").join("");
+
+//     let num = Number(reverse);
+//     if(num === n){
+//         return true;
 //     }
-//     return false;
+//     return false
 // }
-// let sts ='vraj'
-// let st ='vjv'
-// console.log(palindromeStr(sts))
-// console.log(palindromeStr(st))
+// console.log(palindromenum(123));
+// console.log(palindromenum(121))
 
-// Palindrome number
 
-function palindromenum(n) {
-    let str = n.toString();
+function tables(n){
+    
+    let number =n
+    let value = 0;
 
-    let reverse = str.split("").reverse("").join("");
-
-    let num = Number(reverse);
-    if(num === n){
-        return true;
+    for(let i =1 ; i <= 10; i++){
+        value = number *i;
+        console.log(number ," * ", i ," = " , value);
     }
-    return false
 }
-console.log(palindromenum(123))
-console.log(palindromenum(121))
+console.log(tables(21023))
