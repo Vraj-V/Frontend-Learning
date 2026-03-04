@@ -29,7 +29,7 @@ public class News{
 
 
     public static void main(String [] args){
-        long digit = 123155211241234L;
+        longc digit = 123155211241234L;
         int count =0;
 
         while( digit > 0){
