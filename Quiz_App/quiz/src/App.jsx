@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import Quiz from './components/Quiz/Quiz'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>heloo</h1>
+      <Quiz />
     </>
   )
 }
