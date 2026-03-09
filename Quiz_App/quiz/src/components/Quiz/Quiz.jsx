@@ -38,10 +38,10 @@ const Quiz = ()=>{
 // moving to next question
     const pagination =()=>{
 
-                if(lock === true){
-                    if(index === data.length -1){
+            if(lock === true){
+                    if(index === data.length - 1 ){
                         setResult(true);
-                        return 0;
+                        return;
                     }
 
             setIndex(index+1);
@@ -61,8 +61,12 @@ const Quiz = ()=>{
 
 
 
-    const handleSubmit =()=>{
-        console.log("submitted");
+    const handleReset =()=>{
+        setIndex(0);
+        setQuestion(data[0]);
+        setScore(0);
+        setLock(false);
+        setResult(false);
     }
 
     return(
@@ -70,6 +74,9 @@ const Quiz = ()=>{
             <div className="container">
                 <h1>Quiz App</h1>
             <hr />
+            
+            {result ?<>
+            </>:<>
             <h2>{index+1} . {question.question} </h2>
             <ul>
                 <li ref={Option1} onClick={(e)=>{ checkAns(e,1)}}>{question.option1}</li>
@@ -77,8 +84,16 @@ const Quiz = ()=>{
                 <li ref={Option3} onClick={(e)=>{ checkAns(e,3)}}>{question.option3}</li>
                 <li ref={Option4} onClick={(e)=>{ checkAns(e,4)}}>{question.option4}</li>
             </ul>
-            <button onClick={index === data.length -1 ? handleSubmit : pagination}>{index === 4 ? "Submit": "Next"}</button>
+            <button onClick={ ()=>{
+                pagination();
+            }}>{index === 4 ? "Submit": "Next"}</button>
             <div className="index"> Question {index+1} of {data.length} Questions</div>
+            </>}
+
+            {result ? <>
+            <h2>You scored {score} out of {data.length}</h2>
+            <button onClick={handleReset}>Reset</button>
+            </>:<></>}
             </div>
         </>
     )
