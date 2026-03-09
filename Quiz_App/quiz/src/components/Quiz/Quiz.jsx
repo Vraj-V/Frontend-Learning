@@ -1,43 +1,68 @@
-import React,{useState} from "react";
+import React,{useEffect, useRef, useState} from "react";
 import './Quiz.css'
 import {Link, useNavigate} from 'react-router-dom'
 import {data} from '../../assets/data';
-import Submit from "./Submit";
 
 const Quiz = ()=>{
     const [index,setIndex] = useState(0);
     const [question,setQuestion] = useState(data[index]);
-    const [answer,setAnwer] = useState(0)
-    const navigate = useNavigate();
+    const [lock, setLock] = useState(false);
+    const [score, setScore] = useState(0);
+    const [result, setResult] = useState(false);
+    let Option1 = useRef(null);
+    let Option2 = useRef(null);
+    let Option3 = useRef(null);
+    let Option4 = useRef(null);
+
+    let Option_array = [Option1,Option2,Option3,Option4];
+
 
     const checkAns =(e,ans) =>{
-        if(question.ans === ans){
+        if(lock === false){
+            if(question.ans === ans){
             e.target.classList.add("correct");
-            setAnwer(answer+1);
+                setLock(true);
+                setScore(prev => prev + 1);
         }else{
             e.target.classList.add("wrong");
-            alert("Wrong answer");
-            let li = document.querySelectorAll("li");
-            li.forEach((li)=>{
-                li.classList.remove("correct");
-                li.classList.remove("wrong");
-            })
+            setLock(true);
+            Option_array[question.ans -1].current.classList.add("correct");
+
+        }
         }
     }
+    useEffect(()=>{
+        setLock(false);
+    },[index])
 
+// moving to next question
     const pagination =()=>{
-    
+
+                if(lock === true){
+                    if(index === data.length -1){
+                        setResult(true);
+                        return 0;
+                    }
+
             setIndex(index+1);
-            setQuestion(data[index+1]);
-            let li = document.querySelectorAll("li");
-            li.forEach((li)=>{
-                li.classList.remove("correct");
-                li.classList.remove("wrong");
-            })
+                setQuestion(data[index+1]);
+                Option_array.map((opt)=>{
+                    opt.current.classList.remove("correct");
+                    opt.current.classList.remove("wrong");
+                    return null;
+                })
+        }
+        else
+            {
+            alert("Please select an option");
+            }
     }
 
+
+
+
     const handleSubmit =()=>{
-        navigate('/answer')
+        console.log("submitted");
     }
 
     return(
@@ -47,13 +72,13 @@ const Quiz = ()=>{
             <hr />
             <h2>{index+1} . {question.question} </h2>
             <ul>
-                <li onClick={(e)=>{ checkAns(e,1)}}>{question.option1}</li>
-                <li onClick={(e)=>{ checkAns(e,2)}}>{question.option2}</li>
-                <li onClick={(e)=>{ checkAns(e,3)}}>{question.option3}</li>
-                <li onClick={(e)=>{ checkAns(e,4)}}>{question.option4}</li>
+                <li ref={Option1} onClick={(e)=>{ checkAns(e,1)}}>{question.option1}</li>
+                <li ref={Option2} onClick={(e)=>{ checkAns(e,2)}}>{question.option2}</li>
+                <li ref={Option3} onClick={(e)=>{ checkAns(e,3)}}>{question.option3}</li>
+                <li ref={Option4} onClick={(e)=>{ checkAns(e,4)}}>{question.option4}</li>
             </ul>
-            <button onClick={index === 4 ? handleSubmit : pagination}>{index === 4 ? <Link to="/answer" data={answer} className="link">Submit</Link> : "Next"}</button>
-            <div className="index"> Question {index+1} of 5 Questions</div>
+            <button onClick={index === data.length -1 ? handleSubmit : pagination}>{index === 4 ? "Submit": "Next"}</button>
+            <div className="index"> Question {index+1} of {data.length} Questions</div>
             </div>
         </>
     )

@@ -63,15 +63,18 @@
         color: #262626;
 }
 
-.correct{
-    background-color: #198d08;
-    color: rgb(237, 237, 237);
+.container .correct{
+    background-color: #dffff2;
+    border: 1px solid #00d397;
+    border-color: #00d397;
+    color: #00d397;
     font-weight: bold;
 }
 
-.wrong{
-    background-color: #8d0808;
-    color: red;
+.container .wrong{
+    background-color: #ffebeb;
+    color: #8d0808;
+    border-color: #8d0808;
     font-weight: bold;
 }
 
